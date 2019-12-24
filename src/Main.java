@@ -11,10 +11,15 @@ public class Main {
         System.out.println(treeSet1);
         System.out.println(treeSet2);
         System.out.println("---------------------------------------------");
+        System.out.println(add(treeSet1 , treeSet2));
+        System.out.println("---------------------------------------------");
+        System.out.println(like(treeSet1 , treeSet2));
     }
-    public static void add(Set<Character> treeSet , Set<Character> treeSet2)
+    public static Set<Character> add(Set<Character> treeSet , Set<Character> treeSet2)
     {
-
+        Set<Character> add = new TreeSet<>(treeSet);
+        add.addAll(treeSet2);
+        return add;
     }
     public static void create(Set<Character>  treeSet, int a)
     {
@@ -23,5 +28,11 @@ public class Main {
         {
             treeSet.add((char) (random.nextInt(26) + 'a'));
         }
+    }
+    public static Set<Character> like (Set<Character> treeSet , Set<Character> treeSet2)
+    {
+        Set<Character> like = new TreeSet<>(treeSet);
+        like.retainAll(treeSet2);
+        return like;
     }
 }
